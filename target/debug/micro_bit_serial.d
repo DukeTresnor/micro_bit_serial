@@ -1,0 +1,1 @@
+/Users/bradfordarmstrong/Projects/rust_space/embedded_projects/micro_bit_serial/target/debug/micro_bit_serial: /Users/bradfordarmstrong/Projects/rust_space/embedded_projects/micro_bit_serial/src/main.rs

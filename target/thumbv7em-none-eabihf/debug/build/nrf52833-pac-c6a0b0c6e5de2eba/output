@@ -1,0 +1,3 @@
+cargo:rustc-link-search=/Users/bradfordarmstrong/Projects/rust_space/embedded_projects/micro_bit_serial/target/thumbv7em-none-eabihf/debug/build/nrf52833-pac-c6a0b0c6e5de2eba/out
+cargo:rerun-if-changed=device.x
+cargo:rerun-if-changed=build.rs

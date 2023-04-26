@@ -1,0 +1,3 @@
+cargo:rustc-link-search=/Users/bradfordarmstrong/Projects/rust_space/embedded_projects/micro_bit_serial/target/thumbv7em-none-eabihf/debug/build/nrf52833-hal-7b607a7748a93f29/out
+cargo:rerun-if-changed=build.rs
+cargo:rerun-if-changed=memory.x

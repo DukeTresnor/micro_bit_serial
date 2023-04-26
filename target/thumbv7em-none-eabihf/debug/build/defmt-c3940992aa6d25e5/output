@@ -1,0 +1,1 @@
+cargo:rustc-link-search=/Users/bradfordarmstrong/Projects/rust_space/embedded_projects/micro_bit_serial/target/thumbv7em-none-eabihf/debug/build/defmt-c3940992aa6d25e5/out
