@@ -1,0 +1,12 @@
+/Users/bradfordarmstrong/Projects/rust_space/embedded_projects/micro_bit_serial/target/thumbv7em-none-eabihf/debug/deps/defmt_rtt-cc7f5bdbed6563e2.rmeta: /Users/bradfordarmstrong/.cargo/registry/src/github.com-1ecc6299db9ec823/defmt-rtt-0.4.0/src/lib.rs /Users/bradfordarmstrong/.cargo/registry/src/github.com-1ecc6299db9ec823/defmt-rtt-0.4.0/src/channel.rs /Users/bradfordarmstrong/.cargo/registry/src/github.com-1ecc6299db9ec823/defmt-rtt-0.4.0/src/consts.rs /Users/bradfordarmstrong/Projects/rust_space/embedded_projects/micro_bit_serial/target/thumbv7em-none-eabihf/debug/build/defmt-rtt-426cea4eb6cf01d6/out/consts.rs
+
+/Users/bradfordarmstrong/Projects/rust_space/embedded_projects/micro_bit_serial/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-cc7f5bdbed6563e2.rlib: /Users/bradfordarmstrong/.cargo/registry/src/github.com-1ecc6299db9ec823/defmt-rtt-0.4.0/src/lib.rs /Users/bradfordarmstrong/.cargo/registry/src/github.com-1ecc6299db9ec823/defmt-rtt-0.4.0/src/channel.rs /Users/bradfordarmstrong/.cargo/registry/src/github.com-1ecc6299db9ec823/defmt-rtt-0.4.0/src/consts.rs /Users/bradfordarmstrong/Projects/rust_space/embedded_projects/micro_bit_serial/target/thumbv7em-none-eabihf/debug/build/defmt-rtt-426cea4eb6cf01d6/out/consts.rs
+
+/Users/bradfordarmstrong/Projects/rust_space/embedded_projects/micro_bit_serial/target/thumbv7em-none-eabihf/debug/deps/defmt_rtt-cc7f5bdbed6563e2.d: /Users/bradfordarmstrong/.cargo/registry/src/github.com-1ecc6299db9ec823/defmt-rtt-0.4.0/src/lib.rs /Users/bradfordarmstrong/.cargo/registry/src/github.com-1ecc6299db9ec823/defmt-rtt-0.4.0/src/channel.rs /Users/bradfordarmstrong/.cargo/registry/src/github.com-1ecc6299db9ec823/defmt-rtt-0.4.0/src/consts.rs /Users/bradfordarmstrong/Projects/rust_space/embedded_projects/micro_bit_serial/target/thumbv7em-none-eabihf/debug/build/defmt-rtt-426cea4eb6cf01d6/out/consts.rs
+
+/Users/bradfordarmstrong/.cargo/registry/src/github.com-1ecc6299db9ec823/defmt-rtt-0.4.0/src/lib.rs:
+/Users/bradfordarmstrong/.cargo/registry/src/github.com-1ecc6299db9ec823/defmt-rtt-0.4.0/src/channel.rs:
+/Users/bradfordarmstrong/.cargo/registry/src/github.com-1ecc6299db9ec823/defmt-rtt-0.4.0/src/consts.rs:
+/Users/bradfordarmstrong/Projects/rust_space/embedded_projects/micro_bit_serial/target/thumbv7em-none-eabihf/debug/build/defmt-rtt-426cea4eb6cf01d6/out/consts.rs:
+
+# env-dep:OUT_DIR=/Users/bradfordarmstrong/Projects/rust_space/embedded_projects/micro_bit_serial/target/thumbv7em-none-eabihf/debug/build/defmt-rtt-426cea4eb6cf01d6/out

@@ -1,0 +1,3 @@
+cargo:rustc-link-search=/Users/bradfordarmstrong/Projects/rust_space/embedded_projects/micro_bit_serial/target/debug/build/cortex-m-rt-e713752060663683/out
+cargo:rerun-if-changed=build.rs
+cargo:rerun-if-changed=link.x.in

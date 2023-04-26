@@ -1,0 +1,1 @@
+/Users/bradfordarmstrong/Projects/rust_space/embedded_projects/micro_bit_serial/target/thumbv7em-none-eabihf/debug/micro_bit_serial: /Users/bradfordarmstrong/Projects/rust_space/embedded_projects/micro_bit_serial/src/main.rs /Users/bradfordarmstrong/Projects/rust_space/embedded_projects/micro_bit_serial/src/serial_setup.rs
