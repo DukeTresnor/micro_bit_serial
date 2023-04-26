@@ -7,6 +7,7 @@ use cortex_m_rt::entry;
 use rtt_target::{rtt_init_print, rprintln};
 use panic_rtt_target as _;
 use core::fmt::Write;
+use heapless::Vec;
 
 
 // this cfg tag is to account for users with different microbit types
@@ -74,9 +75,37 @@ fn main() -> ! {
 
     //nb::block!(serial.flush()).unwrap();
 
+    // Make a buffer with 32 bytes of capacity; a vector of u8's that can hold 32 u8's
+    let mut buffer: Vec<u8, 32> = Vec::new();
+
     loop {
-        let byte = nb::block!(serial.read()).unwrap();
-        rprintln!("{}", byte)
+        // clearing the buffer
+        buffer.clear();
+
+        loop {
+            // Assume that the receiving can't fail
+            let byte = nb::block!(serial.read()).unwrap();
+            rprintln!("{}", byte);
+
+            // if pushing the current byte into buffer results in an error
+            //   (ie if there's more than 32 bits)
+            if buffer.push(byte).is_err() {
+                write!(serial, "Error: buffer full\r\n").unwrap();
+                break;
+            }
+
+            // If you have the microbit read a carriage return character,
+            //   loop through buffer, then exit loop, then flush your serial and clear buffer
+            if byte == 13 {
+                for byte in buffer.iter().rev().chain(&[b'\n', b'\r']) {
+                    nb::block!(serial.write(*byte)).unwrap();
+                }
+                break;
+            }
+        }
+        nb::block!(serial.flush()).unwrap();
+        
+
     }
 
 
