@@ -1,0 +1,13 @@
+# Embed.toml
+[default.general]
+chip = "nrf52833_xxAA" # for microbit-v2
+
+# chip dependencies?
+[default.reset]
+halt_afterwards = false
+
+[default.rtt]
+enabled = true
+
+[default.gdb]
+enabled = false
