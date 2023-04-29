@@ -8,6 +8,8 @@ static mut RX_BUF: [u8; 1] = [0; 1];
 
 pub struct UartePort<T: Instance>(UarteTx<T>, UarteRx<T>);
 
+// implements an iterator for the UartePort struct?
+// no... just a build methed?
 impl<T: Instance> UartePort<T> {
     pub fn new(serial: Uarte<T>) -> UartePort<T> {
         let (tx, rx) = serial
@@ -17,12 +19,16 @@ impl<T: Instance> UartePort<T> {
     }
 }
 
+// self.0 should correspond to the TX pin, which deals with transfering data
+// this is basically programming the microcontroller to use its TX pin I think
 impl<T: Instance> fmt::Write for UartePort<T> {
     fn write_str(&mut self, s: &str) -> fmt::Result {
         self.0.write_str(s)
     }
 }
 
+// this implements the write and flush methods that we use in main.rs
+// here self references the Uarte<T> instance that we name serial
 impl<T: Instance> serial::Write<u8> for UartePort<T> {
     type Error = Error;
 
@@ -37,6 +43,7 @@ impl<T: Instance> serial::Write<u8> for UartePort<T> {
 
 impl<T: Instance> bserial::write::Default<u8> for UartePort<T> {}
 
+// This implements 
 impl<T: Instance> serial::Read<u8> for UartePort<T> {
     type Error = Error;
 
