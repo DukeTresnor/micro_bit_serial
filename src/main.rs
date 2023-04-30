@@ -4,13 +4,14 @@
 
 
 use cortex_m_rt::entry;
+use embedded_hal::blocking::{i2c, serial::write};
 use rtt_target::{rtt_init_print, rprintln};
 use panic_rtt_target as _;
 use core::fmt::Write;
 use heapless::Vec;
 
 use lsm303agr::{
-    AccelOutputDataRate, Lsm303agr,
+    AccelOutputDataRate, Lsm303agr, Measurement,
 };
 
 use microbit::hal::prelude::*;
@@ -85,7 +86,7 @@ fn main() -> ! {
     // i2c block //
 
     // Defining i2c protocal instance
-    //   Twim instance -- Two wite interface
+    //   Twim instance -- Two write interface
     //   the M is because it's with the v2 microbit
     #[cfg(feature = "v2")]
     let mut i2c = { twim::Twim::new(board.TWIM0, board.i2c_internal.into(), FREQUENCY_A::K100) };
@@ -102,6 +103,8 @@ fn main() -> ! {
 
 
     // setting up variables to hold accelerometer data
+    // we make a Lsm303agr instance b/c it represents the driver that is needed to work
+    //   with the microbit's privided accelerometer and magnetometer
     let mut sensor = Lsm303agr::new_with_i2c(i2c);
     sensor.init().unwrap();
     sensor.set_accel_odr(AccelOutputDataRate::Hz50).unwrap();
@@ -131,22 +134,84 @@ fn main() -> ! {
     // Make a buffer with 32 bytes of capacity; a vector of u8's that can hold 32 u8's
     let mut buffer: Vec<u8, 32> = Vec::new();
 
+
+    // make a buffer for the I2C
+    let mut i2c_buffer: Vec<Measurement, 100> = Vec::new();
+
+    // write the buffer to the I2C
+
+    let mut data_bool = false;
+
+    // The logic for this loop is that after the Measurement vector is filled, break,
+    //   flush the buffer, print out the data, and restart
+    // We'll read bytes from the serial device in order to let us break with carriage return
+
+    loop {
+        i2c_buffer.clear();
+
+        let mut data = Measurement {x:0, y:0, z:0};
+
+        let mut data_record_on = true;
+
+        // read waits for me to input a character to be stored into byte?
+        //let byte = nb::block!(serial.read()).unwrap();
+
+
+        //if byte == 13 {
+        //    data_record_on = true;
+        //}
+
+        while data_record_on {
+            let byte = nb::block!(serial.read()).unwrap();
+            if sensor.accel_status().unwrap().xyz_new_data {
+                data = sensor.accel_data().unwrap();
+                // print with RTT, not normal print
+                // formatting -- :#.2f -- does what?
+                //rprintln!("Acceleration x: {} y: {} z: {}", data.x, data.y, data.z);
+                //i2c_buffer.push(data);
+                //data_counter+=1;
+            }
+
+            // this doesn't seem to happen when I expect it too -- gets here much later than
+            //   initialized i2c_buffer size -- probably need to keep push command in previous
+            //   if block??
+            if i2c_buffer.push(data).is_err() {
+                write!(serial, "i2c_buffer full\r\n").unwrap();
+                data_record_on = false;
+                break;
+            }
+
+            if byte == 13 {
+                write!(serial, "Exiting loop\r\n").unwrap();
+                data_record_on = false;
+                break;
+            }
+        }
+
+        //rprintln!("Acceleration data: {:?}", i2c_buffer);
+        for measurement_data in i2c_buffer.iter() {
+            rprintln!("Acceleration data: {:?}", measurement_data);
+            write!(serial, "Acceleration data: {:?}\r\n", measurement_data);
+        }
+        rprintln!("");
+        nb::block!(serial.flush()).unwrap();
+
+    }
+
+/* 
     loop {
         // clearing the buffer
         buffer.clear();
+        // print data_bool
 
-        if sensor.accel_status().unwrap().xyz_new_data {
-            let data = sensor.accel_data().unwrap();
-            // print with RTT, not normal print
-            // formatting -- :#.2f -- does what?
-            rprintln!("Acceleration x: {} y: {} z: {}", data.x, data.y, data.z);
-        }
 
         loop {
             // Assume that the receiving can't fail
             let byte = nb::block!(serial.read()).unwrap();
             rprintln!("{}", byte);
 
+
+            rprintln!("Data bool: {}", data_bool);
             // Push the current byte into the buffer
             // if pushing the current byte into buffer results in an error
             //   (ie if there's more than 32 bits)
@@ -166,11 +231,24 @@ fn main() -> ! {
                 }
                 break;
             }
+
         }
+
         nb::block!(serial.flush()).unwrap();
         
 
     }
+*/
+
+}
 
 
+pub fn gather_accelerometer_data(
+    mut i2c_buffer: &mut Vec<Measurement, 100>, 
+    acceleration_data: &mut Measurement,
+) {
+    //            rprintln!("Acceleration x: {} y: {} z: {}", data.x, data.y, data.z);
+    //        i2c_buffer.append(data);
+    rprintln!("Acceleration is: x -- {}, y -- {}, z -- {}", acceleration_data.x, acceleration_data.y, acceleration_data.z);
+    i2c_buffer.push(*acceleration_data);
 }
