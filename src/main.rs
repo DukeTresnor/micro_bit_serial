@@ -188,10 +188,12 @@ fn main() -> ! {
             }
         }
 
+
+        write!(serial, "x_accel, y_accel, z_accel\r\n");
         //rprintln!("Acceleration data: {:?}", i2c_buffer);
         for measurement_data in i2c_buffer.iter() {
             rprintln!("Acceleration data: {:?}", measurement_data);
-            write!(serial, "Acceleration data: {:?}\r\n", measurement_data);
+            write!(serial, "{}, {}, {}\r\n", measurement_data.x, measurement_data.y, measurement_data.z);
         }
         rprintln!("");
         nb::block!(serial.flush()).unwrap();
