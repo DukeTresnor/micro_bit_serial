@@ -1,0 +1,111 @@
+[!p[?3;4l[4l>[0m(B[?1h=[H[2J[?12l[?25h
+Welcome to minicom 2.8
+
+OPTIONS: 
+Compiled on Nov 18 2022, 07:58:18.
+Port /dev/tty.usbmodem141202, 11:00:38
+
+Press Meta-Z for help on special keys
+
+i2c_buffer full
+Acceleration data: Measurement { x: 740, y: 116, z: -952 }
+Acceleration data: Measurement { x: 740, y: 116, z: -952 }
+Acceleration data: Measurement { x: 740, y: 116, z: -952 }
+Acceleration data: Measurement { x: -20, y: 264, z: 372 }
+Acceleration data: Measurement { x: -20, y: 264, z: 372 }
+Acceleration data: Measurement { x: -20, y: 264, z: 372 }
+Acceleration data: Measurement { x: 1036, y: 260, z: -184 }
+Acceleration data: Measurement { x: 1036, y: 260, z: -184 }
+Acceleration data: Measurement { x: 1036, y: 260, z: -184 }
+Acceleration data: Measurement { x: -20, y: 96, z: -736 }
+Acceleration data: Measurement { x: -20, y: 96, z: -736 }
+Acceleration data: Measurement { x: -20, y: 96, z: -736 }
+Acceleration data: Measurement { x: 268, y: 568, z: -1296 }
+Acceleration data: Measurement { x: 268, y: 568, z: -1296 }
+[23;80H [24;1HAcceleration data: Measurement { x: 268, y: 568, z: -1296 }
+[23;80H [24;1HAcceleration data: Measurement { x: 60, y: 976, z: -1704 }
+[23;80H [24;1HAcceleration data: Measurement { x: 60, y: 976, z: -1704 }
+[23;80H [24;1HAcceleration data: Measurement { x: 60, y: 976, z: -1704 }
+[23;80H [24;1HAcceleration data: Measurement { x: -72, y: 908, z: -1220 }
+[23;80H [24;1HAcceleration data: Measurement { x: -72, y: 908, z: -1220 }
+[23;80H [24;1HAcceleration data: Measurement { x: -72, y: 908, z: -1220 }
+[23;80H [24;1HAcceleration data: Measurement { x: -456, y: 776, z: -1312 }
+[23;80H [24;1HAcceleration data: Measurement { x: -456, y: 776, z: -1312 }
+[23;80H [24;1HAcceleration data: Measurement { x: -456, y: 776, z: -1312 }
+[23;80H [24;1HAcceleration data: Measurement { x: -208, y: 508, z: -340 }
+[23;80H [24;1HAcceleration data: Measurement { x: -208, y: 508, z: -340 }
+[23;80H [24;1HAcceleration data: Measurement { x: -208, y: 508, z: -340 }
+[23;80H [24;1HAcceleration data: Measurement { x: -16, y: 460, z: -432 }
+[23;80H [24;1HAcceleration data: Measurement { x: -16, y: 460, z: -432 }
+[23;80H [24;1HAcceleration data: Measurement { x: -148, y: 372, z: -268 }
+[23;80H [24;1HAcceleration data: Measurement { x: 216, y: 476, z: 60 }
+[23;80H [24;1HAcceleration data: Measurement { x: 216, y: 476, z: 60 }
+[23;80H [24;1HAcceleration data: Measurement { x: 216, y: 476, z: 60 }
+[23;80H [24;1HAcceleration data: Measurement { x: 380, y: 296, z: -532 }
+[23;80H [24;1HAcceleration data: Measurement { x: 380, y: 296, z: -532 }
+[23;80H [24;1HAcceleration data: Measurement { x: 380, y: 296, z: -532 }
+[23;80H [24;1HAcceleration data: Measurement { x: 416, y: 180, z: -556 }
+[23;80H [24;1HAcceleration data: Measurement { x: 416, y: 180, z: -556 }
+[23;80H [24;1HAcceleration data: Measurement { x: 416, y: 180, z: -556 }
+[23;80H [24;1HAcceleration data: Measurement { x: 712, y: 40, z: -1172 }
+[23;80H [24;1HAcceleration data: Measurement { x: 712, y: 40, z: -1172 }
+[23;80H [24;1HAcceleration data: Measurement { x: 712, y: 40, z: -1172 }
+[23;80H [24;1HAcceleration data: Measurement { x: 852, y: -68, z: -1404 }
+[23;80H [24;1HAcceleration data: Measurement { x: 852, y: -68, z: -1404 }
+[23;80H [24;1HAcceleration data: Measurement { x: 852, y: -68, z: -1404 }
+[23;80H [24;1HAcceleration data: Measurement { x: 1268, y: -388, z: -1268 }
+[23;80H [24;1HAcceleration data: Measurement { x: 1268, y: -388, z: -1268 }
+[23;80H [24;1HAcceleration data: Measurement { x: 1268, y: -388, z: -1268 }
+[23;80H [24;1HAcceleration data: Measurement { x: 1572, y: -888, z: -1008 }
+[23;80H [24;1HAcceleration data: Measurement { x: 1572, y: -888, z: -1008 }
+[23;80H [24;1HAcceleration data: Measurement { x: 1572, y: -888, z: -1008 }
+[23;80H [24;1HAcceleration data: Measurement { x: 1804, y: -680, z: -568 }
+[23;80H [24;1HAcceleration data: Measurement { x: 1804, y: -680, z: -568 }
+[23;80H [24;1HAcceleration data: Measurement { x: 1804, y: -680, z: -568 }
+[23;80H [24;1HAcceleration data: Measurement { x: 1020, y: -296, z: -280 }
+[23;80H [24;1HAcceleration data: Measurement { x: 756, y: -168, z: -108 }
+[23;80H [24;1HAcceleration data: Measurement { x: 756, y: -168, z: -108 }
+[23;80H [24;1HAcceleration data: Measurement { x: 528, y: 252, z: 68 }
+[23;80H [24;1HAcceleration data: Measurement { x: 528, y: 252, z: 68 }
+[23;80H [24;1HAcceleration data: Measurement { x: 528, y: 252, z: 68 }
+[23;80H [24;1HAcceleration data: Measurement { x: 408, y: 348, z: -176 }
+[23;80H [24;1HAcceleration data: Measurement { x: 408, y: 348, z: -176 }
+[23;80H [24;1HAcceleration data: Measurement { x: 408, y: 348, z: -176 }
+[23;80H [24;1HAcceleration data: Measurement { x: 368, y: 344, z: -608 }
+[23;80H [24;1HAcceleration data: Measurement { x: 368, y: 344, z: -608 }
+[23;80H [24;1HAcceleration data: Measurement { x: 368, y: 344, z: -608 }
+[23;80H [24;1HAcceleration data: Measurement { x: 496, y: 476, z: -636 }
+[23;80H [24;1HAcceleration data: Measurement { x: 496, y: 476, z: -636 }
+[23;80H [24;1HAcceleration data: Measurement { x: 496, y: 476, z: -636 }
+[23;80H [24;1HAcceleration data: Measurement { x: 624, y: 576, z: -1012 }
+[23;80H [24;1HAcceleration data: Measurement { x: 624, y: 576, z: -1012 }
+[23;80H [24;1HAcceleration data: Measurement { x: 624, y: 576, z: -1012 }
+[23;80H [24;1HAcceleration data: Measurement { x: 440, y: 560, z: -1232 }
+[23;80H [24;1HAcceleration data: Measurement { x: 440, y: 560, z: -1232 }
+[23;80H [24;1HAcceleration data: Measurement { x: 440, y: 560, z: -1232 }
+[23;80H [24;1HAcceleration data: Measurement { x: 28, y: 584, z: -1928 }
+[23;80H [24;1HAcceleration data: Measurement { x: 28, y: 584, z: -1928 }
+[23;80H [24;1HAcceleration data: Measurement { x: 28, y: 584, z: -1928 }
+[23;80H [24;1HAcceleration data: Measurement { x: -24, y: 684, z: -1232 }
+[23;80H [24;1HAcceleration data: Measurement { x: -24, y: 684, z: -1232 }
+[23;80H [24;1HAcceleration data: Measurement { x: -24, y: 684, z: -1232 }
+[23;80H [24;1HAcceleration data: Measurement { x: -404, y: 720, z: -1084 }
+[23;80H [24;1HAcceleration data: Measurement { x: -484, y: 736, z: -996 }
+[23;80H [24;1HAcceleration data: Measurement { x: -484, y: 736, z: -996 }
+[23;80H [24;1HAcceleration data: Measurement { x: -368, y: 472, z: -572 }
+[23;80H [24;1HAcceleration data: Measurement { x: -368, y: 472, z: -572 }
+[23;80H [24;1HAcceleration data: Measurement { x: -368, y: 472, z: -572 }
+[23;80H [24;1HAcceleration data: Measurement { x: -52, y: 440, z: -128 }
+[23;80H [24;1HAcceleration data: Measurement { x: -52, y: 440, z: -128 }
+[23;80H [24;1HAcceleration data: Measurement { x: -52, y: 440, z: -128 }
+[23;80H [24;1HAcceleration data: Measurement { x: 288, y: 296, z: -340 }
+[23;80H [24;1HAcceleration data: Measurement { x: 288, y: 296, z: -340 }
+[23;80H [24;1HAcceleration data: Measurement { x: 288, y: 296, z: -340 }
+[23;80H [24;1HAcceleration data: Measurement { x: 756, y: 40, z: -684 }
+[23;80H [24;1HAcceleration data: Measurement { x: 756, y: 40, z: -684 }
+[23;80H [24;1HAcceleration data: Measurement { x: 756, y: 40, z: -684 }
+[23;80H [24;1HAcceleration data: Measurement { x: 460, y: 32, z: -680 }
+[23;80H [24;1HAcceleration data: Measurement { x: 460, y: 32, z: -680 }
+[23;80H [24;1HAcceleration data: Measurement { x: 460, y: 32, z: -680 }
+[23;80H [24;1HAcceleration data: Measurement { x: 668, y: 148, z: -856 }
+[23;80H [24;1H[0m(B[7m[K[?12l[?25h[?25lMeta-Z for help | 115200 8N1 | NOR | Minicom 2.8 | VT102 | Offline | odem141202[?12l[?25h[8;30H[?25l[0m(B+----------------------+[9;30H|    Leave Minicom?    |[10;30H|               No     |[11;30H+----------------------+[10;51H[?25l[10;33H[0m(B[7m   Yes  [?12l[?25h[8;1H[0m(BAcceleration data: Measurement { x: -368, y: 472, z: [9;1HAcceleration data: Measurement { x: -368, y: 472, z: [10;1HAcceleration data: Measurement { x: -368, y: 472, z: [11;1HAcceleration data: Measurement { x: -52, y: 440, z: -[24;1H[0m(B[7m[?12l[?25h[?12l[?25h[0m(B[H[2J[?12l[?25h[?1l>[!p[?3;4l[4l>

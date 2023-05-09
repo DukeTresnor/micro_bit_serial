@@ -1,4 +1,4 @@
-// sampling data first runthrough
+// sampling data first runthrough 4/30/23, 2 seconds
 Acceleration data: Measurement { x: 152, y: 164, z: -992 }                      
 Acceleration data: Measurement { x: 152, y: 164, z: -992 }                      
 Acceleration data: Measurement { x: 152, y: 164, z: -992 }                      
