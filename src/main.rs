@@ -10,11 +10,25 @@ use panic_rtt_target as _;
 use core::fmt::Write;
 use heapless::Vec;
 
+// Adding extra uses to fix errors?
+//use core::option::Option::Some;
+//use log::_private_api::Option::Some;
+//use core::ops::Drop;
+use core::result::Result::Ok;
+use core::fmt::Result;
+use core::result::Result::Err;
+
+
+
 use lsm303agr::{
     AccelOutputDataRate, Lsm303agr, Measurement,
 };
 
+use logging_timer::{timer};
+
 use microbit::hal::prelude::*;
+use microbit::hal::Timer;
+
 
 // this cfg tag is to account for users with different microbit types
 /* 
@@ -25,7 +39,7 @@ use microbit::{
     hal::uart::{Baudrate, Parity},
 };
 */
-#[cfg(feature = "v2")]
+//#[cfg(feature = "v2")]
 use microbit::{
     hal::prelude::*,
     hal::uarte,
@@ -34,9 +48,9 @@ use microbit::{
     pac::twim0::frequency::FREQUENCY_A,
 };
 
-#[cfg(feature = "v2")]
+//#[cfg(feature = "v2")]
 mod serial_setup;
-#[cfg(feature = "v2")]
+//#[cfg(feature = "v2")]
 use serial_setup::UartePort;
 
 
@@ -72,7 +86,7 @@ fn main() -> ! {
         )
     };
 */
-    #[cfg(feature = "v2")]
+    //#[cfg(feature = "v2")]
     let mut serial = {
         let serial = uarte::Uarte::new(
             board.UARTE0,
@@ -88,11 +102,14 @@ fn main() -> ! {
     // Defining i2c protocal instance
     //   Twim instance -- Two write interface
     //   the M is because it's with the v2 microbit
-    #[cfg(feature = "v2")]
+    //#[cfg(feature = "v2")]
     let mut i2c = { twim::Twim::new(board.TWIM0, board.i2c_internal.into(), FREQUENCY_A::K100) };
 
     let mut acc = [0];
     let mut mag = [0];
+
+    // Making timers
+    let mut timer = Timer::new(board.TIMER0);
 
     // First write the address + register onto the bus, then read the chip's responses
     i2c.write_read(ACCELEROMETER_ADDR, &[ACCELEROMETER_ID_REG], &mut acc).unwrap();
@@ -162,6 +179,10 @@ fn main() -> ! {
         //}
 
         while data_record_on {
+
+            // creating a logging timer message -- type is Option<LoggingTimer>
+            let timer_message = timer!("ENTER_EXIT_LOOP");
+
             let byte = nb::block!(serial.read()).unwrap();
             if sensor.accel_status().unwrap().xyz_new_data {
                 data = sensor.accel_data().unwrap();
@@ -178,12 +199,14 @@ fn main() -> ! {
             if i2c_buffer.push(data).is_err() {
                 write!(serial, "i2c_buffer full\r\n").unwrap();
                 data_record_on = false;
+                rprintln!("Time elapsed: {}", timer_message);
                 break;
             }
 
             if byte == 13 {
                 write!(serial, "Exiting loop\r\n").unwrap();
                 data_record_on = false;
+                rprintln!("Time elapsed: {}", timer_message);
                 break;
             }
         }
@@ -196,6 +219,7 @@ fn main() -> ! {
             write!(serial, "{}, {}, {}\r\n", measurement_data.x, measurement_data.y, measurement_data.z);
         }
         rprintln!("");
+        
         nb::block!(serial.flush()).unwrap();
 
     }
